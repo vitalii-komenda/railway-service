@@ -12,22 +12,23 @@ function RocketSendService() {
 ```
 * Set order of steps in the service
 ```js
-    that.steps = [
+    this.steps = [
         'fillFuelTank',
         'initMainModule',
         'startEngine'
     ];   
 ```
-* In every method in the service use fail or success helper functions that is included from RailwayService
+* In every method in the service use fail or success helper functions that were included from RailwayService
 ```js
     this.sendEmail = function (params) {
         if (!params.email) {
-            return that.fail('Email is not specified');
+            return this.fail('Email is not specified');
         }
-        return that.success(params);
+        return this.success(params);
     };
 ```
-
+* Argument of this.success method will be passed to the next method according to this.steps array
+* Finally the service can be used like: 
 ```js
 var params = {
     rocket: {
