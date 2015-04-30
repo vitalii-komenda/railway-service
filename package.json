@@ -2,7 +2,7 @@
   "name": "railway-service",
   "description": "Railway oriented service.",
   "author": "Vitaliy Komenda <imorfie@gmail.com>",
-  "version": "0.0.1",
+  "version": "0.0.1-beta",
   "homepage": "https://github.com/vitaliy-komenda/railway-service",
   "repository": {
     "type": "git",
