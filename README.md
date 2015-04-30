@@ -16,3 +16,5 @@ var params = {
 };
 result = (new RocketSendService).run(params); 
 ```
+
+For more information about Railway Oriented Programming please refer to http://www.slideshare.net/ScottWlaschin/railway-oriented-programming
