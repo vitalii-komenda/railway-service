@@ -1,0 +1,23 @@
+{
+  "name": "railway-service",
+  "description": "Railway oriented service.",
+  "author": "Vitaliy Komenda <imorfie@gmail.com>",
+  "version": "0.0.1",
+  "homepage": "https://github.com/vitaliy-komenda/railway-service",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:vitaliy-komenda/railway-service.git"
+  },
+  "main": "./index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "engines": {
+    "node": ">= 0.8"
+  },
+  "keywords": [
+    "service",
+    "railway",
+    "rop"
+  ]
+}
