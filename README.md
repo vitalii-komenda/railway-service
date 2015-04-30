@@ -18,7 +18,7 @@ function RocketSendService() {
         'startEngine'
     ];   
 ```
-* In every method in the service use fail or success helper functions that were included from RailwayService
+* In every method in the service use fail or success helper functions
 ```js
     this.sendEmail = function (params) {
         if (!params.email) {
@@ -31,15 +31,7 @@ function RocketSendService() {
 * Finally the service can be used like: 
 ```js
 var params = {
-    rocket: {
-        fuel: 0,
-        main_module: {
-            init: function () {
-                throw new Error('cant init main module');
-                return 'prhrhprphr';
-            }
-        }
-    }
+    fuel: 0
 };
 result = (new RocketSendService).run(params); 
 ```
