@@ -1,1 +1,1 @@
-module.exports = require('./lib/railway-service.js');
+module.exports = require('./lib/railway_service.js');
