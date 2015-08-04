@@ -3,7 +3,7 @@ Implementation of railway oriented programming in javascript
 
 ## Usage
 
-* Create some service (for example RocketSendService)
+* Create a service (for example RocketSendService)
 * Include RailwayService into your service
 ```js
 function RocketSendService() { 
