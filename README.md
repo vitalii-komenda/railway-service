@@ -3,6 +3,8 @@ Implementation of railway oriented programming in javascript.
 Long story short what it does is executes all defined steps if there is no error.
 Otherwise it will stop executing steps right after failed step.
 
+JS has Promises, so it's just for fun :)
+
 ## Installation
 
 * It can be done using npm
