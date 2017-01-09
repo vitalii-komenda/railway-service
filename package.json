@@ -13,7 +13,7 @@
     "test": "make test"
   },
   "engines": {
-    "node": ">= 0.8"
+    "node": ">= 6.4"
   },
   "keywords": [
     "service",
