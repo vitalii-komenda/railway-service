@@ -21,6 +21,16 @@ rocketService.addStep((p) => {
 });
 ```
 
+* Steps get params from previous step
+```js
+rocketService.addStep((p) => {
+    if (p.fuel === 100) {
+        return { params: "init lighter" };
+    }
+    return { error: "not enough fuel" };
+});
+```
+
 * Finally run the service
 ```js
 const res = rocketService.run({buttonPushed: true});
