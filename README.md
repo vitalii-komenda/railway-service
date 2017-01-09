@@ -3,6 +3,13 @@ Implementation of railway oriented programming in javascript.
 Long story short what it does is executes all defined steps if there is no error.
 Otherwise it will stop executing steps right after failed step.
 
+## Instalation
+
+* To install use npm
+```js
+npm install railway-service
+```
+
 ## Usage
 
 * Create a service (for example RocketService)
