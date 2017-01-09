@@ -1,36 +1,26 @@
-var RocketSendService = require('./helper');
-var assert = require('assert');
+const assert = require('assert');
 
-var rocketSendService = new RocketSendService();
-var params1 = {
-    rocket: {
-        fuel: 0,
-        main_module: {
-            init: function () {
-                throw new Error('cant init main module');
-                return 'prhrhprphr';
-            }
-        }
+const rocketService = new RailwayService();
+rocketService.addStep((p) => {
+    if (p.buttonPushed) {
+        return { params: { fuel: 100 } };
     }
-};
-
-var failResult = rocketSendService.run(params1);
-assert.equal(failResult.isOk, false, 'should be false with fail params');
-
-
-
-var params2 = {
-    rocket: {
-        fuel: 0,
-        main_module: {
-            init: function () {
-                return 'prhrhprphr';
-            }
-        }
+    return { error: "push the button" };
+});
+rocketService.addStep((p) => {
+    if (p.fuel === 100) {
+        return { params: "init lighter" };
     }
-};
-var rocketSendService = new RocketSendService();
-var successResult = rocketSendService.run(params2);
-assert.equal(successResult.isOk, true, 'should be true with success params');
-assert.equal(typeof successResult.value, 'object', 'should have value');
-assert.equal(successResult.value.rocket.fuel, 100, 'should have 100');
+    return { error: "not enough fuel" };
+});
+
+const res = rocketService.run({buttonPushed: true});
+assert.equal(res.succeeded, true, "should be true");
+
+
+rocketService.addStep((p) => {
+    return { error: "big badda boom" };
+});
+const res = rocketService.run({buttonPushed: true});
+assert.equal(res.succeeded, false, "should be false");
+assert.equal(res.error, "big badda boom", "should be false");
