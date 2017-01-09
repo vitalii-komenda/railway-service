@@ -1,4 +1,5 @@
 const assert = require('assert');
+const RailwayService = require("../lib/railway_service");
 
 const rocketService = new RailwayService();
 rocketService.addStep((p) => {
