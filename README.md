@@ -1,5 +1,7 @@
-# railway-service
-Implementation of railway oriented programming in javascript
+# Railway Service
+Implementation of railway oriented programming in javascript.
+Long story short what it does is executes all defined steps if there is no error.
+Otherwise it will stop executing steps right after failed step.
 
 ## Usage
 
@@ -23,6 +25,6 @@ rocketService.addStep((p) => {
 ```js
 const res = rocketService.run({buttonPushed: true});
 ```
-* It will return boolean succeeded property
+* It will return boolean succeeded property or error if occurred 
 
 For more information about Railway Oriented Programming please refer to http://www.slideshare.net/ScottWlaschin/railway-oriented-programming
