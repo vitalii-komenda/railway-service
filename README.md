@@ -3,37 +3,26 @@ Implementation of railway oriented programming in javascript
 
 ## Usage
 
-* Create a service (for example RocketSendService)
-* Include RailwayService into your service
+* Create a service (for example RocketService)
 ```js
-function RocketSendService() { 
-    railwayService.call(this);
-}
+const rocketService = new RailwayService();
 ```
-* Set order of steps in the service
+
+* Add a step
+* Each step must return either {error: ...} or {params: ...}
 ```js
-    this.steps = [
-        'fillFuelTank',
-        'initMainModule',
-        'startEngine'
-    ];   
+rocketService.addStep((p) => {
+    if (p.buttonPushed) {
+        return { params: { fuel: 100 } };
+    }
+    return { error: "push the button" };
+});
 ```
-* In every method in the service use fail or success helper functions
+
+* Finally run the service
 ```js
-    this.sendEmail = function (params) {
-        if (!params.email) {
-            return this.fail('Email is not specified');
-        }
-        return this.success(params);
-    };
+const res = rocketService.run({buttonPushed: true});
 ```
-* Argument of this.success method will be passed to the next method according to this.steps array
-* Finally the service can be used like: 
-```js
-var params = {
-    fuel: 0
-};
-result = (new RocketSendService).run(params); 
-```
+* It will return boolean succeeded property
 
 For more information about Railway Oriented Programming please refer to http://www.slideshare.net/ScottWlaschin/railway-oriented-programming
