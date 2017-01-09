@@ -21,6 +21,6 @@ assert.equal(res.succeeded, true, "should be true");
 rocketService.addStep((p) => {
     return { error: "big badda boom" };
 });
-const res = rocketService.run({buttonPushed: true});
-assert.equal(res.succeeded, false, "should be false");
-assert.equal(res.error, "big badda boom", "should be false");
+const res2 = rocketService.run({buttonPushed: true});
+assert.equal(res2.succeeded, false, "should be false");
+assert.equal(res2.error, "big badda boom", "should be false");
